@@ -116,7 +116,7 @@ public class LocationActivity extends AppCompatActivity {
         // detected.
         arSceneView
                 .getScene()
-                .setOnUpdateListener(
+                .addOnUpdateListener(
                         frameTime -> {
                             if (!hasFinishedLoading) {
                                 return;
@@ -125,13 +125,13 @@ public class LocationActivity extends AppCompatActivity {
                             if (locationScene == null) {
                                 // If our locationScene object hasn't been setup yet, this is a good time to do it
                                 // We know that here, the AR components have been initiated.
-                                locationScene = new LocationScene(this, this, arSceneView);
+                                locationScene = new LocationScene( this, arSceneView);
 
                                 // Now lets create our location markers.
                                 // First, a layout
                                 LocationMarker layoutLocationMarker = new LocationMarker(
-                                        30.100611642095725,
-                                        31.31069653467265,
+                                        31.311245526290854,
+                                        30.10034410421852,
                                         getExampleView()
                                 );
 
@@ -256,9 +256,9 @@ public class LocationActivity extends AppCompatActivity {
             return;
         }
 
-        if (arSceneView.getSession() != null) {
-            showLoadingMessage();
-        }
+//        if (arSceneView.getSession() != null) {
+//            showLoadingMessage();
+//        }
     }
 
     /**

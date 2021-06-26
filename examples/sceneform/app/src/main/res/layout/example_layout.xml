@@ -4,21 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha="0.93"
-    android:background="#a70a04"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:padding="30dp">
+    android:padding="10dp">
 
-    <TextView
+    <ImageView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="This is an example layout."
-        android:textColor="#fff" />
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_foot_steps"
+        android:textColor="#fff"
+        tools:text="43245325" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:textColor="#fff"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        tools:text="43245325" />
 </LinearLayout>

@@ -17,4 +17,6 @@
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <!-- copy of material_deep_teal_500 from the support design library -->
     <color  name="deep_teal">#ff009688</color>
+    <color name="colorPrimary">#ff7900</color>
+
 </resources>
