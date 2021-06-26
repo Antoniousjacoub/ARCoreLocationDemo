@@ -130,8 +130,8 @@ public class LocationActivity extends AppCompatActivity {
                                 // Now lets create our location markers.
                                 // First, a layout
                                 LocationMarker layoutLocationMarker = new LocationMarker(
-                                        -4.849509,
-                                        42.814603,
+                                        30.100611642095725,
+                                        31.31069653467265,
                                         getExampleView()
                                 );
 
@@ -149,11 +149,11 @@ public class LocationActivity extends AppCompatActivity {
                                 locationScene.mLocationMarkers.add(layoutLocationMarker);
 
                                 // Adding a simple location marker of a 3D model
-                                locationScene.mLocationMarkers.add(
-                                        new LocationMarker(
-                                                -0.119677,
-                                                51.478494,
-                                                getAndy()));
+//                                locationScene.mLocationMarkers.add(
+//                                        new LocationMarker(
+//                                                -0.119677,
+//                                                51.478494,
+//                                                getAndy()));
                             }
 
                             Frame frame = arSceneView.getArFrame();
