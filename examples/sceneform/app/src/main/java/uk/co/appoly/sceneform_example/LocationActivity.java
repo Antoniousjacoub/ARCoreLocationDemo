@@ -17,14 +17,15 @@ package uk.co.appoly.sceneform_example;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.core.Frame;
 import com.google.ar.core.Plane;
 import com.google.ar.core.Session;
@@ -44,6 +45,7 @@ import uk.co.appoly.arcorelocation.LocationScene;
 import uk.co.appoly.arcorelocation.rendering.LocationNode;
 import uk.co.appoly.arcorelocation.rendering.LocationNodeRender;
 import uk.co.appoly.arcorelocation.utils.ARLocationPermissionHelper;
+import uk.co.appoly.sceneform_example.helpers.Utilities;
 
 /**
  * This is a simple example that shows how to create an augmented reality (AR) application using the
@@ -52,7 +54,8 @@ import uk.co.appoly.arcorelocation.utils.ARLocationPermissionHelper;
 public class LocationActivity extends AppCompatActivity {
     private boolean installRequested;
     private boolean hasFinishedLoading = false;
-    
+    private boolean isDestinationPopupShowed = false;
+
     private Snackbar loadingMessageSnackbar = null;
 
     private ArSceneView arSceneView;
@@ -125,13 +128,13 @@ public class LocationActivity extends AppCompatActivity {
                             if (locationScene == null) {
                                 // If our locationScene object hasn't been setup yet, this is a good time to do it
                                 // We know that here, the AR components have been initiated.
-                                locationScene = new LocationScene( this, arSceneView);
+                                locationScene = new LocationScene(this, arSceneView);
 
                                 // Now lets create our location markers.
                                 // First, a layout
                                 LocationMarker layoutLocationMarker = new LocationMarker(
-                                        31.311245526290854,
-                                        30.10034410421852,
+                                        Constants.DESTINATION_LOG,
+                                        Constants.DESTINATION_LAT,
                                         getExampleView()
                                 );
 
@@ -141,8 +144,14 @@ public class LocationActivity extends AppCompatActivity {
                                     @Override
                                     public void render(LocationNode node) {
                                         View eView = exampleLayoutRenderable.getView();
-                                        TextView distanceTextView = eView.findViewById(R.id.textView2);
+                                        TextView distanceTextView = eView.findViewById(R.id.tvDistance);
                                         distanceTextView.setText(node.getDistance() + "M");
+                                        if (node.getDistance() < 10&&!isDestinationPopupShowed) {
+                                            Utilities.showDialog(
+                                                    LocationActivity.this,
+                                                    getString(R.string.destinationReached), null, "Done", 0, null);
+                                            isDestinationPopupShowed = true;
+                                        }
                                     }
                                 });
                                 // Adding the marker

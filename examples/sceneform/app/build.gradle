@@ -57,7 +57,13 @@ dependencies {
     implementation "com.android.support:design:27.1.1"
     //implementation 'uk.co.appoly.arcorelocation:arcore-location-debug@aar'
 //    implementation 'com.github.appoly:ARCore-Location:1.0.5'
+    implementation 'com.google.android.gms:play-services-places:15.0.1'
+    implementation "androidx.cardview:cardview:1.0.0"
+
     implementation project(path: ':arcore-location')
+    //Lottie
+    def lottieVersion = "3.6.1"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
 
 repositories {

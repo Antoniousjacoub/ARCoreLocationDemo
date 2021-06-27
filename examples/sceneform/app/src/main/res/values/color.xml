@@ -18,5 +18,6 @@
     <!-- copy of material_deep_teal_500 from the support design library -->
     <color  name="deep_teal">#ff009688</color>
     <color name="colorPrimary">#ff7900</color>
-
+    <color name="colorPrimaryDark">#333333</color>
+    <color name="colorAccent">#FFFFFF</color>
 </resources>

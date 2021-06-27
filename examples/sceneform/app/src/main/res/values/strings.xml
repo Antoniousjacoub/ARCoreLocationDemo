@@ -17,4 +17,5 @@
 <resources>
     <string name="app_name">ARCore-Location</string>
     <string name="plane_finding">Searching for surfaces&#8230;</string>
+    <string name="destinationReached">Destination reached!</string>
 </resources>
