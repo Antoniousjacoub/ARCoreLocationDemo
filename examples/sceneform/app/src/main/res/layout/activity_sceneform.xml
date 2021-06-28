@@ -18,7 +18,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uk.co.appoly.sceneform_example.LocationActivity">
+    tools:context="com.orange.ar.sceneform_example.ui.LocationActivity">
 
   <com.google.ar.sceneform.ArSceneView
       android:id="@+id/ar_scene_view"
